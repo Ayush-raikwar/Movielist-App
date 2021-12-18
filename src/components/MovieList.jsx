@@ -44,6 +44,7 @@ export const MovieList = () => {
             }) 
         }
         console.log(movies);
+
     }
 
     return(
@@ -60,13 +61,12 @@ export const MovieList = () => {
                 <StyledRow>
                     Drama
                 {
-                    
-                    movies.map(movie => {
+                    movies.map((movie, index) => {
                         
                         if(movie.genres[0].name === 'Drama'){
                             return(
                                 <StyledCol>
-                                    <MoviePoster src={`${imageBaseUrl}${movie.poster_path}`} />
+                                    <MoviePoster index={Math.floor(Math.random()*100000)} src={`${imageBaseUrl}${movie.poster_path}`} />
                                 </StyledCol>
                             )
                         }
@@ -77,12 +77,12 @@ export const MovieList = () => {
                 <StyledRow>
                         Crime
                     {
-                       movies.map(movie => {
+                       movies.map((movie, index) => {
                         
                         if(movie.genres[0].name === 'Crime'){
                             return(
                                 <StyledCol>
-                                    <MoviePoster src={`${imageBaseUrl}${movie.poster_path}`} />
+                                    <MoviePoster index={Math.floor(Math.random()*100000)} src={`${imageBaseUrl}${movie.poster_path}`} />
                                 </StyledCol>
                             )
                         }
@@ -93,12 +93,12 @@ export const MovieList = () => {
                 <StyledRow>
                         Action
                     {
-                       movies.map(movie => {
+                       movies.map((movie, index) => {
                         
                         if(movie.genres[0].name === 'Action'){
                             return(
                                 <StyledCol>
-                                    <MoviePoster src={`${imageBaseUrl}${movie.poster_path}`} />
+                                    <MoviePoster index={Math.floor(Math.random()*100000)} src={`${imageBaseUrl}${movie.poster_path}`} />
                                 </StyledCol>
                             )
                         }
